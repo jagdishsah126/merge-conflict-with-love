@@ -17,14 +17,14 @@
 
 ## 📄 File Details & Component Overview
 
-### 1. [`index.html`](file:///home/jagdish/Desktop/Sandbox/Zara/Hello/index.html)
-- **`<div id="terminal-loader">`**: Interactive terminal simulation window playing realistic boot-up sequences with a skip option.
+### 1. [`index.html`](file:///home/jagdish/Desktop/Sandbox/Zara/Ask%20Her/index.html)
+- **`<div id="terminal-loader">`**: Interactive terminal simulation window checking IOE WRC Pokhara status and feelings deployment.
 - **`<header class="status-bar">`**: Branch pill (`main*`), live status pulse indicator, and sound vibe toggle.
-- **`<section class="hero-section">`**: Greeting with wave emoji, code snippet with custom syntax highlighting, and smooth CTA anchor.
-- **`<section class="specs-section">`**: Dev candidate profile cards (Coffee & Food Pipeline, Listening & Empathy API, Instagram Boyfriend Skills, Date Itinerary Engine).
+- **`<section class="hero-section">`**: Greeting with wave emoji, code snippet by Jagdish (BCT, WRC Pokhara), and smooth CTA anchor.
+- **`<section class="specs-section">`**: Dev candidate profile cards (Lakeside Coffee & Snack Pipeline, Pokhara Scooter Cruising API, Aesthetic Photo Skills, Date Itinerary Engine).
 - **`<section class="changelog-section">`**: Release notes format highlighting reasons for asking them out (`ADDED`, `FIXED`, `OPTIMIZED`).
 - **`<section id="the-big-ask">`**: The interactive proposal card featuring the YES / Runaway NO button arena.
-- **`<div id="success-screen">`**: Modal overlay appearing upon saying "YES", letting the date choose a vibe, select a day, and generate a downloadable/shareable date ticket pass.
+- **`<div id="success-screen">`**: Modal overlay appearing upon saying "YES", letting her choose a real Pokhara vibe, select a day, and generate a date pass with direct WhatsApp integration.
 
 ### 2. [`style.css`](file:///home/jagdish/Desktop/Sandbox/Zara/Hello/style.css)
 - **CSS Variables (`:root`)**: Vibrant dark-theme palette (`#0f111a`, `#ff5e97`, `#9d4edd`, `#05d550`, `#38bdf8`).
