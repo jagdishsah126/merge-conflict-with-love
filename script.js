@@ -1,15 +1,16 @@
 // Terminal Booting Sequence
 const terminalMessages = [
-  "$ git checkout -b feelings-v2.0",
-  "Switched to a new branch 'feelings-v2.0'",
+  "$ git checkout -b bct-love-branch",
+  "Switched to a new branch 'wrc-pokhara-feelings'",
   "$ npm run build-courage",
-  "[info] Checking heart rate... 180 BPM 💓",
+  "[info] Verifying IOE WRC Pokhara student status... [OK]",
+  "[info] Checking heart rate... 185 BPM 💓",
   "[info] Loading butterflies.dll... [OK]",
-  "[info] Gathering date ideas... [OK]",
-  "[warn] Nervousness levels exceeding safe thresholds 😅",
-  "$ python3 -m ask_out --target=\"the_prettiest_girl\"",
-  "[success] Connection established with your smile ✨",
-  "Deploying application to production..."
+  "[info] Scanning Pokhara date spots (Lakeside, Sarangkot, Pame)... [OK]",
+  "[warn] Warning: High levels of nervousness detected in engineering lab 😅",
+  "$ python3 -m ask_her --from=\"Jagdish_BCT\" --target=\"ThePrettiestGirl\"",
+  "[success] 200 OK: Connection established with your smile ✨",
+  "Deploying application live to production..."
 ];
 
 const terminalTextEl = document.getElementById("terminal-text");
@@ -146,29 +147,53 @@ yesBtn.addEventListener("click", () => {
   dateInput.value = tomorrow.toISOString().split("T")[0];
 });
 
-// Form Submission -> Show Date Ticket
+// Form Submission -> Show Date Ticket & Prepare WhatsApp Message
+const whatsappSendBtn = document.getElementById("whatsapp-send-btn");
+const myWhatsAppNumber = "9779702406668";
+
 dateForm.addEventListener("submit", (e) => {
   e.preventDefault();
   const vibe = document.getElementById("date-type").value;
   const dateVal = document.getElementById("date-day").value;
 
-  ticketVibe.textContent = vibe;
-  ticketDate.textContent = new Date(dateVal).toLocaleDateString(undefined, { 
+  const formattedDate = new Date(dateVal).toLocaleDateString(undefined, { 
     weekday: 'long', 
     year: 'numeric', 
     month: 'long', 
     day: 'numeric' 
   });
 
+  ticketVibe.textContent = vibe;
+  ticketDate.textContent = formattedDate;
+
+  // Build the pre-filled cute WhatsApp message
+  const rawMessage = `Hey Jagdish! 🥰 I visited your cute website!\n\nI say YES to our date! 🥂✨\n📍 Plan: ${vibe}\n📅 Date: ${formattedDate}\n\nSee you in Pokhara! 💖`;
+  const whatsappUrl = `https://wa.me/${myWhatsAppNumber}?text=${encodeURIComponent(rawMessage)}`;
+
+  whatsappSendBtn.href = whatsappUrl;
+
   dateForm.classList.add("hidden");
   finalTicket.classList.remove("hidden");
   launchConfetti();
   playSuccessChime();
+
+  // Automatically attempt opening WhatsApp after a short delay for smooth delight
+  setTimeout(() => {
+    window.open(whatsappUrl, "_blank");
+  }, 1200);
 });
 
 // Screenshot / Share Alert
 document.getElementById("screenshot-btn").addEventListener("click", () => {
-  alert("📸 Take a screenshot of this ticket and DM/text it to me! Can't wait! ❤️");
+  const vibe = ticketVibe.textContent;
+  const date = ticketDate.textContent;
+  const copyText = `Hey Jagdish! I accepted our date for: ${vibe} on ${date} 💖`;
+  if (navigator.clipboard) {
+    navigator.clipboard.writeText(copyText);
+    alert("✨ Date details copied to clipboard! You can paste it into chat or take a screenshot! 📸");
+  } else {
+    alert("📸 Take a screenshot of this pass and send it to Jagdish! Can't wait! ❤️");
+  }
 });
 
 // Web Audio API for cute 8-bit sound effects
