@@ -168,19 +168,22 @@ dateForm.addEventListener("submit", (e) => {
 
   // Build the pre-filled cute WhatsApp message
   const rawMessage = `Hey Jagdish! 🥰 I visited your cute website!\n\nI say YES to our date! 🥂✨\n📍 Plan: ${vibe}\n📅 Date: ${formattedDate}\n\nSee you in Pokhara! 💖`;
-  const whatsappUrl = `https://wa.me/${myWhatsAppNumber}?text=${encodeURIComponent(rawMessage)}`;
+  const encodedText = encodeURIComponent(rawMessage);
+  
+  // Use api.whatsapp.com/send which works seamlessly on both mobile (opens WhatsApp app) and desktop (opens WhatsApp Web)
+  const whatsappUrl = `https://api.whatsapp.com/send?phone=${myWhatsAppNumber}&text=${encodedText}`;
 
-  whatsappSendBtn.href = whatsappUrl;
+  whatsappSendBtn.setAttribute("href", whatsappUrl);
 
   dateForm.classList.add("hidden");
   finalTicket.classList.remove("hidden");
   launchConfetti();
   playSuccessChime();
 
-  // Automatically attempt opening WhatsApp after a short delay for smooth delight
+  // Instant direct navigation so popup blockers don't intercept it
   setTimeout(() => {
-    window.open(whatsappUrl, "_blank");
-  }, 1200);
+    window.location.href = whatsappUrl;
+  }, 1000);
 });
 
 // Screenshot / Share Alert
