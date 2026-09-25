@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>git commit -m "Will you go on a date with me?"</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@400;600;700;800&family=Caveat:wght@600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <!-- Canvas for floating particles and confetti -->
+  <canvas id="bg-canvas"></canvas>
+  <canvas id="confetti-canvas"></canvas>
+
+  <!-- Terminal Loading Overlay -->
+  <div id="terminal-loader" class="terminal-overlay">
+    <div class="terminal-window">
+      <div class="terminal-bar">
+        <div class="window-buttons">
+          <span class="btn-dot dot-red"></span>
+          <span class="btn-dot dot-yellow"></span>
+          <span class="btn-dot dot-green"></span>
+        </div>
+        <span class="terminal-title">bash — feelings_deployment.sh</span>
+      </div>
+      <div class="terminal-body" id="terminal-text">
+        <!-- Terminal lines will type here -->
+      </div>
+      <button id="skip-btn" class="skip-btn">Skip Booting ⚡</button>
+    </div>
+  </div>
+
+  <!-- Main Web App -->
+  <main id="app" class="main-container hidden">
+    <!-- Floating Quick Nav / Status Bar -->
+    <header class="status-bar">
+      <div class="branch-pill">
+        <span class="git-icon">🌿</span>
+        <span class="branch-name">main*</span>
+      </div>
+      <div class="status-center">
+        <span class="status-indicator"></span>
+        <span>Status: 100% Crushing On You</span>
+      </div>
+      <div class="audio-toggle" id="audio-toggle" title="Toggle cute sound vibes">
+        <span id="audio-icon">🎵</span>
+      </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero-section">
+      <div class="badge-pill">✨ Alert: Unhandled Exception Detected</div>
+      <h1 class="hero-title">
+        Hello Beautiful <span class="wave">👋</span><br>
+        <span class="gradient-text">My heart threw a 200 OK for you.</span>
+      </h1>
+      <p class="hero-sub">
+        I couldn't just send a boring text. So I sat down, drank 3 cups of iced coffee, 
+        and deployed an entire web app just to ask you one question... 💻✨
+      </p>
+      <div class="terminal-code-snippet">
+        <span class="token-keyword">const</span> feelings = {<br>
+        &nbsp;&nbsp;target: <span class="token-string">"The girl reading this"</span>,<br>
+        &nbsp;&nbsp;butterflies: <span class="token-num">Infinity</span>,<br>
+        &nbsp;&nbsp;status: <span class="token-string">"Head over heels in love"</span><br>
+        };
+      </div>
+      <a href="#the-big-ask" class="cta-scroll-btn">Proceed to Evaluation ↓</a>
+    </section>
+
+    <!-- Dev Portfolio / Spec Sheet Card -->
+    <section class="section specs-section">
+      <h2 class="section-title">Candidate Profile & Technical Specs 📄</h2>
+      <p class="section-subtitle">Why I believe I meet all the unit tests for being your date:</p>
+
+      <div class="specs-grid">
+        <div class="spec-card">
+          <div class="spec-icon">☕</div>
+          <h3>Coffee & Food Pipeline</h3>
+          <p>Proficient in securing high-tier snacks, remembering your exact coffee order, and always offering you the last bite.</p>
+          <div class="spec-tag">Reliability: 99.99%</div>
+        </div>
+
+        <div class="spec-card">
+          <div class="spec-icon">🎧</div>
+          <h3>Listening & Empathy API</h3>
+          <p>Zero packet loss when you rant about your day. Supports high concurrency emotional support and unlimited hugs.</p>
+          <div class="spec-tag">Latency: &lt;10ms</div>
+        </div>
+
+        <div class="spec-card">
+          <div class="spec-icon">📸</div>
+          <h3>Instagram Boyfriend Skills</h3>
+          <p>Patient angles, 0.5x lens mastery, prompt camera readiness, and aesthetic video captures without complaining.</p>
+          <div class="spec-tag">Resolution: 4K HDR</div>
+        </div>
+
+        <div class="spec-card">
+          <div class="spec-icon">🚀</div>
+          <h3>Date Itinerary Engine</h3>
+          <p>No more <em>"I don't know, what do you want to do?"</em> loops. Fully planned cozy dinner, desserts, and drive-around dates.</p>
+          <div class="spec-tag">Bug-free dates</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Why You? (Feature Release Notes) -->
+    <section class="section changelog-section">
+      <h2 class="section-title">Release Notes: Why It Had To Be You 💖</h2>
+      <div class="changelog-box">
+        <div class="log-item">
+          <span class="log-tag log-added">ADDED</span>
+          <div class="log-content">
+            <h4>Your Smile</h4>
+            <p>Completely broke my system focus. Increased happiness index by +400% whenever you're around.</p>
+          </div>
+        </div>
+        <div class="log-item">
+          <span class="log-tag log-fixed">FIXED</span>
+          <div class="log-content">
+            <h4>Boring Days Bug</h4>
+            <p>Resolved issue where ordinary days felt dull. Meeting you provided an instant patch to everything.</p>
+          </div>
+        </div>
+        <div class="log-item">
+          <span class="log-tag log-optimized">OPTIMIZED</span>
+          <div class="log-content">
+            <h4>My Weekend Plans</h4>
+            <p>Deprecating solitary weekends in favor of taking you out on the cutest dates ever.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- The Big Ask / Interactive Playground -->
+    <section id="the-big-ask" class="section ask-section">
+      <div class="ask-card">
+        <div class="terminal-bar">
+          <div class="window-buttons">
+            <span class="btn-dot dot-red"></span>
+            <span class="btn-dot dot-yellow"></span>
+            <span class="btn-dot dot-green"></span>
+          </div>
+          <span class="terminal-title">proposal_evaluator.js</span>
+        </div>
+        
+        <div class="ask-content">
+          <div class="heart-pulse-icon">💝</div>
+          <h2 class="question-text">Will you go on a date with me?</h2>
+          <p class="question-sub">Warning: Saying yes results in good food, laughs, and butterflies.</p>
+
+          <div class="button-zone" id="button-zone">
+            <button id="yes-btn" class="btn btn-yes">YES! Absolutely 🥰</button>
+            <button id="no-btn" class="btn btn-no">No 💔</button>
+          </div>
+          <p id="tease-text" class="tease-text">&nbsp;</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Hidden Date Planner / Success Modal Screen -->
+    <div id="success-screen" class="success-overlay hidden">
+      <div class="success-card">
+        <div class="confetti-badge">🎉 BUILD SUCCEEDED! (EXIT CODE: 0)</div>
+        <h2 class="success-title">YAY! It's a Date! 🥂✨</h2>
+        <p class="success-desc">
+          I promise this will be the best decision you've made all week. Let's schedule our commit:
+        </p>
+
+        <form id="date-form" class="date-form">
+          <div class="form-group">
+            <label for="date-type">Choose Date Vibe 🕯️</label>
+            <select id="date-type" class="form-control">
+              <option value="Cozy Pasta & Wine 🍝">Cozy Pasta & Rooftop Drinks 🍝</option>
+              <option value="Matcha & Cute Bookstore Stroll 🍵">Matcha & Bookstore Stroll 🍵</option>
+              <option value="Arcade Games & Ice Cream 🍦">Arcade Games & Late Night Ice Cream 🍦</option>
+              <option value="Sunset Picnic & Music 🌅">Sunset Picnic & Music 🌅</option>
+              <option value="Surprise Me (Developer's Choice) 🎲">Surprise Me (Developer's Choice) 🎲</option>
+            </select>
+          </div>
+
+          <div class="form-group">
+            <label for="date-day">Pick a Day 📅</label>
+            <input type="date" id="date-day" class="form-control" required>
+          </div>
+
+          <button type="submit" id="confirm-date-btn" class="btn btn-confirm">
+            Lock in Date 🚀
+          </button>
+        </form>
+
+        <div id="final-ticket" class="final-ticket hidden">
+          <div class="ticket-header">
+            <span>🎟️ OFFICIAL DATE PASS</span>
+            <span>PASS #001</span>
+          </div>
+          <div class="ticket-body">
+            <p><strong>Reservation For:</strong> You & Me 💑</p>
+            <p><strong>Plan:</strong> <span id="ticket-vibe"></span></p>
+            <p><strong>Date:</strong> <span id="ticket-date"></span></p>
+            <p><strong>Dress code:</strong> Whatever makes you feel pretty & comfy ✨</p>
+          </div>
+          <div class="ticket-footer">
+            <span>Status: Confirmed & Pushed to Production 🚀</span>
+          </div>
+          <button id="screenshot-btn" class="btn btn-secondary">Send this ticket to me! 📸</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="app-footer">
+      <p>Handcrafted with ❤️, TypeScript delusions, and endless caffeine for someone special.</p>
+    </footer>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>
