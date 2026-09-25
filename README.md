@@ -37,11 +37,14 @@ npx serve .
 ```
 Visit `http://localhost:8080` in your browser.
 
-### 2. Deploy Free with GitHub Pages (Recommended!)
+### 2. Live URL
+🌐 **Official Live Site**: [https://askher.jagdishsah.com.np](https://askher.jagdishsah.com.np)
+
+### 3. Deploy Free with GitHub Pages
 1. Push this repo to your GitHub profile.
 2. Go to **Settings** > **Pages**.
 3. Under **Branch**, select `main` and click **Save**.
-4. Your custom link (`https://<username>.github.io/<repo-name>/`) will be live in minutes ready to be sent to your crush!
+4. Set custom domain to `askher.jagdishsah.com.np` (already configured in `CNAME`).
 
 ---
 

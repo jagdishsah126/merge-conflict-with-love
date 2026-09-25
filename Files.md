@@ -7,6 +7,7 @@
 ├── Work_Step.md       # Step tracking & progress checklist
 ├── Files.md           # Architecture directory tree & component index
 ├── README.md          # Project showcase, features & GitHub Pages deployment guide
+├── CNAME              # Custom domain configuration (askher.jagdishsah.com.np)
 ├── index.html         # Main web application structure & semantic layout
 ├── style.css          # Dark-mode coder aesthetic, gradients, neon glows, responsive layouts
 └── script.js          # Interactive terminal typing, runaway button, audio synth, confetti canvas
